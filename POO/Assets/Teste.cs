@@ -4,7 +4,7 @@ public class Teste : MonoBehaviour
     Carro fusca = new Carro();
     Carro gol = new Carro();
     
-    Caminhao caminhao = new Caminhao();
+    //Caminhao caminhao = new Caminhao();
     
     void Start()
     {
@@ -30,11 +30,11 @@ public class Teste : MonoBehaviour
 
         }
 
-        caminhao.AtribuirTipoDeCarroceria("Larga");
-        caminhao.AtribuirNumero_de_rodas(8);
-        caminhao.AtribuirPreco(6000.00f);
-        caminhao.AtribuirCor("Azul");
-        caminhao.AtribuirNome("Caminhão do Falstão");
+        //caminhao.AtribuirTipoDeCarroceria("Larga");
+        //caminhao.AtribuirNumero_de_rodas(8);
+        //caminhao.AtribuirPreco(6000.00f);
+        //caminhao.AtribuirCor("Azul");
+        //caminhao.AtribuirNome("Caminhão do Falstão");
 
     }
     void Update()
