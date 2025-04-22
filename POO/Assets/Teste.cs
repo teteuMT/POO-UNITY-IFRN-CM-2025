@@ -12,7 +12,8 @@ public class Teste : MonoBehaviour
         fusca.AtribuirCor("Amarelo");
         fusca.AtribuirNumero_de_rodas(4);
         fusca.AtribuirPreco(2050.90f);
-        Debug.Log("O "+ fusca.NomeDoCarro() +" é "+ fusca.CorDoCarro() + " tem " + fusca.Numero_de_rodas()+ " e custa R$"+fusca.Preco());
+        Debug.Log("O "+ fusca.NomeDoCarro() +" é "+ fusca.CorDoCarro() + " tem " + fusca.Numero_de_rodas()+
+                  " e custa R$"+fusca.Preco());
         
         gol.AtribuirNome("Gol do Falstão");
         gol.AtribuirCor("Verde");
@@ -34,6 +35,8 @@ public class Teste : MonoBehaviour
         caminhao.AtribuirPreco(6000.00f);
         caminhao.AtribuirCor("Azul");
         caminhao.AtribuirNome("Caminhão do Falstão");
+        
+        //fusca.AtribuirTipoDeCarroceria("Larga");
 
         if (fusca.ComparePreco(caminhao))
         {
