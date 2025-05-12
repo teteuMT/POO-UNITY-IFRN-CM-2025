@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class MovimentoPlayer : MonoBehaviour
 {
     private Rigidbody _rigidbody; 
     
-    public float velocidade = 10;
+    private float velocidade;
      void Start()
-    {
+     {
+         velocidade = gameObject.GetComponent<Personagem>().Velocidade();
         _rigidbody = GetComponent<Rigidbody>();
     }
     void Update()
