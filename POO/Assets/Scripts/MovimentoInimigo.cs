@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MovimentoInimigo : MonoBehaviour
 {
+    public GameObject ataqueObject;
     private GameObject _player;
+    
     
     private Rigidbody _rigidbody;
     private float velocidade;
@@ -13,6 +15,8 @@ public class MovimentoInimigo : MonoBehaviour
     private bool naVisao = false;
     
     private SphereCollider _sphereCollider;
+
+    public float distanciaMinima = 1.5f;
     
     void Start()
     {
@@ -27,16 +31,24 @@ public class MovimentoInimigo : MonoBehaviour
     void Update()
     {
         _sphereCollider.radius = raioDeVisao;
-        
-       // if (Vector3.Distance(transform.position, _player.transform.position) < raioDeVisao )
-       if(naVisao == true) 
-       {
-            transform.LookAt(_player.transform.position);
-            transform.position = Vector3.MoveTowards(transform.position, 
-                _player.transform.position, 
-                velocidade * Time.deltaTime); 
-        } 
-        // Debug.DrawLine(transform.position, _player.transform.position, Color.red);
+
+        if (Vector3.Distance(transform.position, _player.transform.position) > distanciaMinima)
+        {
+            if (naVisao == true)
+            {
+                transform.LookAt(_player.transform.position);
+                transform.position = Vector3.MoveTowards(transform.position,
+                    _player.transform.position,
+                    velocidade * Time.deltaTime);
+            }
+            ataqueObject.SetActive(false);
+        }
+        else
+        {
+            ataqueObject.SetActive(true);
+        }
+
+        Debug.DrawLine(transform.position, _player.transform.position, Color.red);
         
     }
     void OnTriggerStay(Collider colisao)
